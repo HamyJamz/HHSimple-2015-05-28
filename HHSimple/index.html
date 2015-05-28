@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="en">
+    <head>
+    	<meta charset="UTF-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    
+    	<meta name="apple-mobile-web-app-capable" content="yes">
+    	<meta name="mobile-web-app-capable" content="yes">
+       
+          <link rel="prefetch" href="images/greenBG_1280x1024.jpg">
+          <link rel="prefetch" href="images/GlacierLagoon.jpg">
+          <link rel="prefetch" href="images/pebbles.jpg">
+          <link rel="prefetch" href="images/rockSurf.jpg">
+          <link rel="prefetch" href="images/water.jpg">
+          <link rel="prefetch" href="images/foggy_water.jpg">
+          <link rel="prefetch" href="images/typewriter.jpg">
+          
+                    
+        <link rel="stylesheet" type="text/css" href="style.css">
+        
+        <script src="jquery-1.11.2.min.js"></script>
+        
+
+        <script >
+           
+            /*    
+            document.onmousedown=disableclick;
+            var status="Right Click Disabled";
+            Function disableclick(event)
+            {
+                if(event.button==2)
+                {
+                    alert(status);
+                    return false;    
+                }
+            }*/
+        </script>
+
+        <script>
+        $(document).ready(function(){
+            $("#resumeSlide").click(function(){
+                $("#resume").toggle("slide");
+            });
+            
+            $("#emailSlide").click(function(){
+                $("#email").toggle("slide");
+            });
+            
+            $("#phoneSlide").click(function(){
+                $("#phone").toggle("slide");
+            });
+            
+            $("#linkedSlide").click(function(){
+                $("#linkedin").toggle("slide");
+            });
+            
+        });    
+        </script>    
+
+        <script>
+        $(function() {
+            $('a[href*=#]:not([href=#])').click(function() {
+                if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname)
+                {
+                
+                    var target = $(this.hash);
+                    target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+                    if (target.length) {
+                        $('html,body').animate({
+                            scrollTop: target.offset().top
+                        }, 700);
+                        return false;
+                    }
+                }
+            });
+        });
+        </script>
+        
+        
+        
+        <script>
+           
+                var bgType =[
+                    "background-image",
+                    "background-color"
+                ];
+                
+                var bg = [
+                    "images/greenBG_1280x1024.jpg",
+                    "images/GlacierLagoon.jpg",
+                    "images/pebbles.jpg",
+                    "images/rockSurf.jpg",
+                    "images/water.jpg",
+                    "images/foggy_water.jpg",
+                    "images/typewriter.jpg"
+                ];
+                
+                var fonts = [
+                    "Georgia",
+                    "Palatino",
+                    "Times",
+                    
+                    "Arial",
+                    "Gadget",
+                    "Cursive",
+                    "Impact",
+                    "Tahoma",
+                    "Helvetica",
+                    "Verdana",
+                    
+                    "Courier",
+                    "Monaco"
+                ];
+           
+           
+            function changeText(){
+                var i= Math.floor((Math.random() * fonts.length));
+                    console.log("i: "+ i);
+                $('body').css("font-family", fonts[i]);
+                    console.log("font: "+fonts[i]);   
+            }
+            
+            
+            function changeBGColor(){
+                var bgColor = "hsla("+parseInt( Math.random()*360 , 10)+","+parseInt( Math.random()*50 + 50)+"%, 60%, 1)";
+
+               
+                $('#simpleIntro').css("background-image", "");
+                $('#simpleIntro').css("background-color",bgColor);
+                
+                $('#footBand').css("background-image", "");
+                $('#footBand').css("background-color",bgColor); 
+                
+                $('.conTitle').css("background-image", "");
+                $('.conTitle').css("background-color",bgColor); 
+                
+                $('.PNGicon').css("background-image", "");
+                $('.PNGicon').css("background-color",bgColor); 
+            }
+            
+            
+            function changeBGImg(){
+                $(".modal").css("display","block");  
+                
+                var i= Math.floor((Math.random() * bg.length));
+                var img = new Image();
+                
+                img.onload = function()
+                {
+                        console.log(bg[i]+" image loaded");
+                        $('#simpleIntro').css("background-color", "");
+                        $('#simpleIntro').css("background-image","url("+bg[i]+")");
+                        
+                        $('#footBand').css("background-color", "#D0D0D0");
+                        
+                        $('.conTitle').css("background-color","#D0D0D0");
+                        
+                        $('.PNGicon').css("background-color","#D0D0D0");
+                       
+                        
+                        console.log("bg: "+bg[i]);
+                        setTimeout(function(){
+                            $(".modal").css("display","none");      
+                        },1000)
+                }
+                    
+                img.src=bg[i];    
+            }
+            
+            
+            function randStyle(){
+                var j= Math.floor( (Math.random() * bgType.length) );
+                
+                if(bgType[j] == "background-color")
+                {
+                    changeBGColor();
+                    
+                }else if(bgType[j] == "background-image"){
+                    changeBGImg();
+                    
+                }else{
+                    console.log("random style function broke");    
+                }
+                
+                changeText();
+                
+                
+            }
+        </script>
+        
+        <script>
+            var i=0;
+            
+            var text= [
+            "Hello World!",
+            "Once I ate a blue mushroom",
+            "I had 99 problems, they were all bears",
+            "Turning Coffee into Code since 1842",
+            "My friends keep lighting my Minecraft house on fire",
+            "I built my fortress but my Dwarves refuse to do what I tell them...Jerks.",
+            "Pfannkuchen sind Liebe",
+            "This is some text!",
+            "#CFF830",
+            "I wumbo, you wumbo, he-she-me wumbo.",
+            "Wumboing, wumbology, the study of wumbo!",
+            "Meatball! Meatball! Spaghetti underneath! Ravioli! Ravioli! Great barrier reef!",
+            "It’s not just any boulder...It’s a ROCK!",
+            "Is mayonnaise an instrument?",
+            "Once there was an ugly Barnacle. He was so ugly that everyone died. The End.",
+            ">:I",
+            "The Boulder is over his conflicted feelings, and now he's ready to bury you in a rock-a-lanche!",
+            "I like that boulder, that is a nice boulder",
+            "To all my little Hulkamaniacs, say your prayers, take your vitamins and you will never go wrong.",
+            "I fear no man, no beast, or evil, brother.",
+            "I mean every word I ever say, ever. Because I'm Harry Potter.",
+            "Alas, a cornacopia of love. Aww.",
+            "Oooh! All right, that's it! Dishonor! Dishonor on your whole family!",
+            "Dishonor on you! Dishonor on your cow!",
+            "r u havin a giggle ther m8?",
+            "Groovy",
+            "Do or do not, there is no try",
+            "All of this text started out serious, I swear!",
+            "Sucking at something is the first step to being sorta good at something.",
+            "Hi Mom!",
+            "There are 10 types of people in the world: the people that understand binary, and the people that have friends.",
+            "I would love to change the world, but they won't give me the source code",
+            "Roses are #FF0000, Violets are #0000FF, All my base are belong to you",
+            "Enter any 11-digit prime number to continue...",
+            "Such words. Amaze. Much text. Very Change. Wow.",
+            "Missouri!",
+            "42"
+            ];
+            
+            function textScroll(){
+                $("#startText").text(text[i]);
+                $("#startText").fadeIn("3000",
+                function()
+                {
+                    setTimeout(function(){ $("#startText").fadeOut("3000"); }, 4000);
+                        i= Math.floor((Math.random() * text.length));
+                })
+            }
+            
+            window.onload = function()
+            {
+                setInterval(function()
+                {
+                    textScroll();    
+                },10000);
+            }; 
+        </script>
+        
+        
+    </head>
+    
+    
+    
+    <!--<body oncontextmenu="return false">-->
+    <body>
+
+        <div id="topNavBar">
+            
+            
+            <a href="#" onclick="changeText()"> Change Font</a>
+            
+            <a href="#" onclick="changeBGColor();"> Change Color </a>
+            
+            <a href="#" onclick="changeBGImg();"> Change Image </a>
+            
+            <a href="#" onclick="randStyle();"> Random Style </a>
+        
+            
+        </div><!--topNavBar-->
+        
+        
+        
+        <div id="wrapper">
+            <div id="simpleIntro" style="background-color:#D0D0D0;">
+            
+                <div id="centerTxt">
+                    <h1 id="name">
+                       Hilary Hamlin    
+                    </h1><!--name-->
+                    <div id="startText" style="height:10vh">
+                        
+                    </div>
+               </div>     
+                  
+                    <div id="down">
+                        <a data-scroll="" data-options="{&quot;offset&quot;: 60}" href="#contentWrapper">
+                            <svg height="50" width="50">
+                                <g fill="none" stroke="white" stroke-linecap="round" stroke-width="3">
+                                    <rect x="5" y="5" rx="5" ry="5" width="40" height="40" ></rect>
+                                    <path d="M10 20 L25 35 L40 20"></path>
+                                </g>
+                            </svg>
+                        </a>
+                    </div>
+            </div><!--simpleIntro-->
+            
+            
+            
+            <div id="contentWrapper" >
+
+                    <h1 class="conTitle" style="background-color:#D0D0D0;">HELLO WORLD</h1>
+                    <div class="content">
+                    
+                        <p>
+                        My name is 
+                        <a href="http://lmgtfy.com/?q=Hilary+Hamlin">
+                        Hilary Hamlin</a>,
+                        I am a programmer and web developer.
+                        I enjoy working on front end applications, and user interfaces.  
+                        </p>
+                        
+                        <p> 
+                        I spend my spare time collecting comic books,elaborately posing action figures, crocheting, 
+                        marathoning shows on Netflix, pampering my two spoiled rotten cats, Felicity and Chewbacca,
+                        planning and moderating table top adventures, and playing absurd board games with friends.
+                        </p>
+                    </div>
+                    
+
+                    <h1 class="conTitle" style="background-color:#D0D0D0;">RESUME</h1>
+                    <div class="content">
+                        <div class="toggleVis" id="resumeSlide">
+                            <img  style="background-color:#D0D0D0;" class="PNGicon" src="icons/document169.png" alt="" />
+                            <a  href="https://drive.google.com/uc?export=download&id=0BwupDGxs1XIoNWZUcEFaSkdPOUk" class="PNGtext" id="resume">
+                                <h2>Click here to download a PDF of my Resume</h2>
+                            </a>
+                            <div style="clear:both"></div>
+       
+                        </div><!--TOGGLE VIS END-->
+
+                    </div>
+
+                  
+                    
+                    <h1 class="conTitle" style="background-color:#D0D0D0;">Contact Me</h1>
+                    <div class="content">
+                        
+                        
+                        <div class="toggleVis" id="emailSlide">
+                            <img  style="background-color:#D0D0D0;" class="PNGicon" src="icons/email109.png" alt="" />
+                                <a href="mailto:hsh8r8@mst.edu" id="email" class="PNGtext" target="_blank">
+                                    <h2 >hsh8r8@mst.edu</h2>
+                                </a> 
+                        </div>
+                        
+                        <div style="clear:both"></div>
+                        
+                        <div class="toggleVis" id="phoneSlide"> 
+                            <img  style="background-color:#D0D0D0;" class="PNGicon" src="icons/phone382.png" alt="" />
+                            
+                                <a id="phone" class="PNGtext" href="tel:15732809680">
+                                    <h2 class="PNGTextH1"> (573) 280-9680</h2>
+                                </a>
+                            
+                        </div>
+                        
+                        <div style="clear:both"></div>
+                        
+                        <div class="toggleVis" id="linkedSlide">
+                            <img  style="background-color:#D0D0D0;" class="PNGicon" src="icons/briefcase56.png" alt="" />
+                            <a id="linkedin" href="https://www.linkedin.com/pub/hilary-hamlin/90/289/56a" class="PNGtext" target="_blank">
+                               <h2 class="PNGTextH1"> https://www.linkedin.com</h2>
+                            </a>
+                        </div><!--TOGGLE VIS END-->
+                        
+                        <div style="clear:both"></div>
+                    </div>
+                    
+                    <div style="clear:both"></div>
+                    
+                    
+                    
+ 
+            </div><!--contentwrapper-->
+                
+            
+            
+            <div id="footBand" style="background-color:#D0D0D0;">
+                
+                    <a href="#simpleIntro">
+                        <svg height="50" width="50">
+                            <g fill="none" stroke="white" stroke-linecap="round" stroke-width="3">
+                                <rect x="5" y="5" rx="5" ry="5"width="40" height="40" ></rect>
+                                <polyline points="10 30 25 10 40 30"/>
+                            </g>
+                        </svg>
+                    </a> 
+                    
+                    <div id="iconCredit" ><!--icon credit-->
+                    Icons made by
+                    <a href="http://icon-works.com" title="Icon Works">
+                    Icon Works
+                    </a> from
+                    <a href="http://www.flaticon.com" title="Flaticon">
+                    www.flaticon.com
+                    </a>
+                    is licensed by
+                    <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">
+                    CC BY 3.0
+                    </a>
+                    </div>
+                    <!--icon credit-->
+                    
+            </div>    
+            
+            
+        </div><!--wrapper-->
+        
+
+            
+
+        <div class="modal" style="display:none;">
+        <!-- Place at bottom of page -->
+        </div>
+    </body>
+</html>
